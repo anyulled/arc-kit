@@ -5,6 +5,39 @@ All notable changes to ArcKit will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.5] - 2026-02-15
+
+### Added
+
+- **New `/arckit.dfd` command** — Data Flow Diagram (DFD) generation with multi-instance support, document control, and DFD-specific templates across all distribution formats (plugin, Codex, Gemini extension)
+- **DFD multi-instance document type** — `DFD` added to `generate-document-id.sh` for sequential numbering (ARC-001-DFD-001, ARC-001-DFD-002, etc.)
+
+### Changed
+
+- **Explicit VERSION file path in all commands and agents** — all 49 commands and 5 agents now reference `${CLAUDE_PLUGIN_ROOT}/VERSION` instead of bare `VERSION`, ensuring the ArcKit version is always read from the plugin's authoritative file regardless of project state
+
+---
+
+## [2.4.4] - 2026-02-12
+
+### Fixed
+
+- **Windows cp1252 encoding fix** — added explicit `encoding='utf-8'` to all file I/O operations in `arckit init` to prevent `UnicodeEncodeError` on Windows when writing files containing Unicode box-drawing characters (fixes #49)
+
+---
+
+## [2.4.3] - 2026-02-11
+
+### Added
+
+- **Data Commons MCP server for Gemini extension** — added `datacommons-mcp` to the Gemini extension MCP configuration
+
+### Changed
+
+- Version bump to 2.4.3 across all distribution formats
+
+---
+
 ## [2.4.1] - 2026-02-10
 
 ### Added

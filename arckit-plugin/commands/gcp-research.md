@@ -21,7 +21,7 @@ This command performs Google Cloud-specific technology research using the Google
 
 1. **Determine the project**: If the user specified a project name/number, note it. Otherwise, identify the most recent project in `projects/`.
 
-2. **Launch the agent**: Launch the **arckit-gcp-research** agent with the following prompt:
+2. **Launch the agent**: Launch the **arckit-gcp-research** agent in `acceptEdits` mode with the following prompt:
 
    ```
    Research Google Cloud services and architecture patterns for the project in projects/{project-dir}/.
@@ -42,7 +42,7 @@ If the Task tool is unavailable or the user prefers inline execution, fall back 
    - **First**, check if `.arckit/templates/gcp-research-template.md` exists in the project root
    - **If found**: Read the user's customized template (user override takes precedence)
    - **If not found**: Read `${CLAUDE_PLUGIN_ROOT}/templates/gcp-research-template.md` (default)
-   - Read the `VERSION` file and update the version in the template metadata line when generating
+   - Read the `${CLAUDE_PLUGIN_ROOT}/VERSION` file and update the version in the template metadata line when generating
    - **Tip**: Users can customize templates with `/arckit:customize gcp-research`
 3. Extract Google Cloud service needs from requirements (compute, data, integration, security, AI/ML)
 4. Use MCP tools for each category: service discovery, deep dive, architecture patterns, Architecture Framework assessment, Security Command Center mapping, code samples

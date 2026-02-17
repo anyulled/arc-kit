@@ -21,7 +21,7 @@ This command performs market research to identify available technologies, servic
 
 1. **Determine the project**: If the user specified a project name/number, note it. Otherwise, identify the most recent project in `projects/`.
 
-2. **Launch the agent**: Launch the **arckit-research** agent with the following prompt:
+2. **Launch the agent**: Launch the **arckit-research** agent in `acceptEdits` mode with the following prompt:
 
 ```
 Research technology and service options for the project in projects/{project-dir}/.
@@ -42,7 +42,7 @@ If the Task tool is unavailable or the user prefers inline execution, fall back 
    - **First**, check if `.arckit/templates/research-findings-template.md` exists in the project root
    - **If found**: Read the user's customized template (user override takes precedence)
    - **If not found**: Read `${CLAUDE_PLUGIN_ROOT}/templates/research-findings-template.md` (default)
-   - Read the `VERSION` file and update the version in the template metadata line when generating
+   - Read the `${CLAUDE_PLUGIN_ROOT}/VERSION` file and update the version in the template metadata line when generating
    - **Tip**: Users can customize templates with `/arckit:customize research`
 3. Extract research categories from requirements
 4. Use WebSearch and WebFetch for each category (vendors, pricing, reviews, open source, UK Gov)

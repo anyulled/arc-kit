@@ -21,7 +21,7 @@ This command discovers external data sources — APIs, datasets, open data porta
 
 1. **Determine the project**: If the user specified a project name/number, note it. Otherwise, identify the most recent project in `projects/`.
 
-2. **Launch the agent**: Launch the **arckit-datascout** agent with the following prompt:
+2. **Launch the agent**: Launch the **arckit-datascout** agent in `acceptEdits` mode with the following prompt:
 
 ```
 Discover external data sources for the project in projects/{project-dir}/.
@@ -42,7 +42,7 @@ If the Task tool is unavailable or the user prefers inline execution, fall back 
    - **First**, check if `.arckit/templates/datascout-template.md` exists in the project root
    - **If found**: Read the user's customized template (user override takes precedence)
    - **If not found**: Read `${CLAUDE_PLUGIN_ROOT}/templates/datascout-template.md` (default)
-   - Read the `VERSION` file and update the version in the template metadata line when generating
+   - Read the `${CLAUDE_PLUGIN_ROOT}/VERSION` file and update the version in the template metadata line when generating
    - **Tip**: Users can customize templates with `/arckit:customize datascout`
 3. Extract data needs from requirements (DR-xxx, FR-xxx, INT-xxx, NFR-xxx)
 4. Check api.gov.uk and data.gov.uk FIRST
